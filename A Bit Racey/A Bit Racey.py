@@ -12,7 +12,7 @@ blue = (0, 0, 255)
 gameDisplay = pygame.display.set_mode((display_width, display_height))
 pygame.display.set_caption('A Bit Racey')
 clock = pygame.time.Clock()
-carImg = pygame.image.load('mcqueen.png')
+carImg = pygame.image.load('policeman.png')
 
 def scoreboard(count):
     font = pygame.font.SysFont(None, 25)
