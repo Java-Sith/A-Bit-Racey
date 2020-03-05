@@ -14,11 +14,13 @@ pygame.display.set_caption('A Bit Racey')
 clock = pygame.time.Clock()
 carImg = pygame.image.load('policeman.png')
 
+
 def scoreboard(count):
     font = pygame.font.SysFont(None, 25)
     text = font.render("Score: " + str(count), True, black)
     gameDisplay.blit(text, (0, 0))
-    
+
+
 def message_display(text):
     sText = pygame.font.Font('freesansbold.ttf', 115)
     textSurf, textRect = text_objects(text, sText)
@@ -28,18 +30,23 @@ def message_display(text):
     time.sleep(2)
     game_loop()
 
+
 def text_objects(text, font):
     textSurf = font.render(text, True, red)
     return textSurf, textSurf.get_rect()
 
+
 def obstacles(x, y, width, height, color):
     pygame.draw.rect(gameDisplay, color, [x, y, width, height])
+
 
 def car(x, y):
     gameDisplay.blit(carImg, (x, y))
 
+
 def crash():
     message_display('You crashed')
+
 
 def game_loop():
     x = display_width * 0.45
@@ -83,4 +90,6 @@ def game_loop():
         pygame.display.update()
         clock.tick(60)
 
-game_loop()
+
+if __name__ == '__main__':
+    game_loop()
